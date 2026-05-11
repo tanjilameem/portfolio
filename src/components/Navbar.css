@@ -1,0 +1,350 @@
+/* NAVBAR */
+
+.navbar {
+
+    width: 100%;
+
+    padding: 22px 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+
+/* LOGO */
+
+.logo img {
+
+    width: 120px;
+
+    cursor: pointer;
+
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+
+    display: flex;
+    align-items: center;
+
+    gap: 40px;
+
+    list-style: none;
+
+}
+
+
+.nav-links li a {
+
+    text-decoration: none;
+
+    color: rgb(7, 6, 6);
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    position: relative;
+
+    transition: 0.3s ease;
+
+}
+
+
+/* HOVER EFFECT */
+
+.nav-links li a::after {
+
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0%;
+    height: 2px;
+
+    background: cyan;
+
+    transition: 0.3s ease;
+
+}
+
+
+.nav-links li a:hover {
+
+    color: cyan;
+
+}
+
+
+.nav-links li a:hover::after {
+
+    width: 100%;
+
+}
+
+
+/* MENU ICON */
+
+.menu-icon {
+
+    display: none;
+
+    font-size: 28px;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 768px) {
+
+    .menu-icon {
+
+        display: block;
+
+    }
+
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 85px;
+        right: -100%;
+
+        width: 260px;
+        height: 100vh;
+
+        background: rgba(15, 23, 42, 0.95);
+
+        backdrop-filter: blur(10px);
+
+        flex-direction: column;
+
+        align-items: center;
+
+        padding-top: 60px;
+
+        gap: 35px;
+
+        transition: 0.4s ease;
+
+    }
+
+
+    .nav-links.active {
+
+        right: 0;
+
+    }
+
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+section {
+    padding-top: 120px;
+}
+
+.theme-btn {
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+}
+
+
+.theme-btn:hover {
+
+    transform: rotate(180deg);
+
+    box-shadow: 0 0 20px cyan;
+
+}
+
+/* THEME SWITCH */
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-switch span {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.switch {
+    width: 65px;
+    height: 34px;
+    background: #e7e7e7;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 4px;
+}
+
+.switch.dark {
+    background: #d8cfc3;
+}
+
+.toggle {
+    width: 26px;
+    height: 26px;
+    background: #8aa1a1;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: 0.3s;
+}
+
+.switch.dark .toggle {
+    left: 35px;
+    background: #8aa1a1;
+}
+
+/* THEME TOGGLE */
+
+.switch {
+    width: 65px;
+    height: 34px;
+    background: #ececec;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.4s ease;
+    padding: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.switch.dark {
+    background: #d8cfc3;
+}
+
+.toggle {
+    width: 24px;
+    height: 24px;
+    background: #8fa3a3;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.4s ease;
+}
+
+.switch.dark .toggle {
+    left: 35px;
+}
+
+/* THEME OPTIONS */
+
+.theme-options {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.switch {
+    width: 60px;
+    height: 32px;
+    background: #ececec;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    padding: 4px;
+    transition: 0.3s ease;
+}
+
+.switch.dark {
+    background: #d8cfc3;
+}
+
+.toggle {
+    width: 22px;
+    height: 22px;
+    background: #8fa3a3;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: 0.3s ease;
+}
+
+.switch.active .toggle {
+    left: 33px;
+}
+
+/* THEME TOGGLE */
+
+.switch {
+    width: 65px;
+    height: 34px;
+    background: #ececec;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.4s ease;
+    padding: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.switch.dark {
+    background: #d8cfc3;
+}
+
+.toggle {
+    width: 24px;
+    height: 24px;
+    background: #8fa3a3;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.4s ease;
+}
+
+.switch.dark .toggle {
+    left: 35px;
+}
