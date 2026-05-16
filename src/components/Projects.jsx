@@ -37,7 +37,7 @@ function Projects() {
                             <span>Javascript</span>
 
                             <span>React</span>
-                            
+
                             <span>CSS</span>
 
                         </div>
@@ -45,7 +45,7 @@ function Projects() {
                         <div className="project-buttons">
 
                             <a
-                                href="https://github.com/tanjilameem/Retrieve-and-Display-Data-from-the-Database-on-a-Webpage"
+                                href="https://github.com/tanjilameem/my_portfolio"
                                 target="_blank"
                                 rel="noreferrer"
                             >
@@ -140,7 +140,7 @@ function Projects() {
                         <div className="project-buttons">
 
                             <a
-                                href="https://github.com/yourusername/hello-helmet"
+                                href="https://github.com/tanjilameem/Data-Insertion-System-from-the-user-interface-to-the-database"
                                 target="_blank"
                                 rel="noreferrer"
                             >
@@ -183,7 +183,7 @@ function Projects() {
                         <div className="project-buttons">
 
                             <a
-                                href=""
+                                href="https://github.com/tanjilameem/DS-project"
                                 target="_blank"
                                 rel="noreferrer"
                             >

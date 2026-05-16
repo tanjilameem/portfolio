@@ -1,12 +1,43 @@
-import {
-    FaEnvelope,
-    FaPhoneAlt,
-    FaMapMarkerAlt
-} from 'react-icons/fa'
+import { useRef } from 'react'
+
+import emailjs from '@emailjs/browser'
 
 import './Contact.css'
 
 function Contact() {
+
+    const form = useRef()
+
+    const sendEmail = (e) => {
+
+        e.preventDefault()
+
+        emailjs.sendForm(
+
+            'service_bpcqdgj',
+            'template_vgydgdh',
+            form.current,
+            'pxoNi4PfUib_q0nN6'
+
+        )
+
+            .then(() => {
+
+                alert('Message Sent Successfully!')
+
+                e.target.reset()
+
+            })
+
+            .catch((error) => {
+
+                console.log(error)
+
+                alert(error.text)
+
+            })
+
+    }
 
     return (
 
@@ -16,101 +47,39 @@ function Contact() {
                 Contact Me
             </h2>
 
+            <form
+                ref={form}
+                onSubmit={sendEmail}
+                className="contact-form"
+            >
 
-            <div className="contact-container">
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                />
 
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                />
 
-                {/* LEFT SIDE */}
+                <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
 
-                <div className="contact-info">
+                <button type="submit">
 
-                    <div className="contact-card">
+                    Send Message
 
-                        <div className="contact-icon">
-                            <FaEnvelope />
-                        </div>
+                </button>
 
-                        <div>
-
-                            <h3>Email</h3>
-
-                            <p>
-                                meem15-4979@diu.edu.bd
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div className="contact-card">
-
-                        <div className="contact-icon">
-                            <FaPhoneAlt />
-                        </div>
-
-                        <div>
-
-                            <h3>Phone</h3>
-
-                            <p>
-                                +880 1343888683
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div className="contact-card">
-
-                        <div className="contact-icon">
-                            <FaMapMarkerAlt />
-                        </div>
-
-                        <div>
-
-                            <h3>Location</h3>
-
-                            <p>
-                                Dhaka, Bangladesh
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                {/* RIGHT SIDE */}
-
-                <form className="contact-form">
-
-                    <input
-                        type="text"
-                        placeholder="Your Name"
-                    />
-
-                    <input
-                        type="email"
-                        placeholder="Your Email"
-                    />
-
-                    <textarea
-                        rows="7"
-                        placeholder="Your Message"
-                    ></textarea>
-
-                    <button type="submit">
-
-                        Send Message
-
-                    </button>
-
-                </form>
-
-            </div>
+            </form>
 
         </section>
     )

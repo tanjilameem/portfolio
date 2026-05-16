@@ -1,157 +1,480 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
 * {
-
-  margin: 0;
-  padding: 0;
-
-  box-sizing: border-box;
-
-  font-family: 'Poppins', sans-serif;
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
+
+/* =========================
+   HTML
+========================= */
 
 html {
-
-  scroll-behavior: smooth;
-
-  scroll-padding-top: 100px;
-
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
+
+/* =========================
+   BODY
+========================= */
 
 body {
-
-  overflow-x: hidden;
-
+    overflow-x: hidden;
 }
 
+
+/* =========================
+   LIGHT MODE
+========================= */
 
 .app {
-
-  background: #f8fafc;
-
-  color: inherit;
-
-  transition: 0.4s ease;
-
+    min-height: 100vh;
+    background: #f8fafc;
+    color: #0f172a;
+    transition: 0.4s ease;
 }
 
+
+/* =========================
+   DARK MODE
+========================= */
 
 .app.dark {
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #111827,
+        #1e293b
+    );
 
-  background: linear-gradient(135deg,
-      #0f172a,
-      #111827,
-      #1e293b);
-
-  color: white;
-
-}
-
-body.dark {
-  background: #0f0f0f;
-  color: white;
-}
-
-/* LIGHT MODE */
-
-.app {
-  background: white;
-  color: black;
-  min-height: 100vh;
-  transition: 0.4s ease;
+    color: white;
 }
 
 
-/* DARK MODE */
+/* =========================
+   SECTION
+========================= */
 
-.app.dark {
-  background: #0f172a;
-  color: white;
-}
-
-/* LIGHT MODE */
-
-.app {
-  background: #ffffff;
-  color: #111111;
-  min-height: 100vh;
-  transition: 0.3s ease;
+section {
+    padding: 110px 10%;
 }
 
 
-/* DARK MODE */
+/* =========================
+   HEADINGS
+========================= */
 
-.app.dark {
-  background: #0f172a;
-  color: #ffffff;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
 }
 
 
-/* ALL TEXT */
+/* =========================
+   PARAGRAPH
+========================= */
+
+p {
+    line-height: 1.8;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+img {
+    width: 100%;
+    display: block;
+}
+
+
+/* =========================
+   LIGHT MODE CARDS
+========================= */
+
+.app .service-card,
+.app .project-card,
+.app .skill-card,
+.app .about-card,
+.app .experience-card,
+.app .contact-card {
+
+    background: white;
+
+    color: #0f172a;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================
+   DARK MODE CARDS
+========================= */
+
+.app.dark .service-card,
+.app.dark .project-card,
+.app.dark .skill-card,
+.app.dark .about-card,
+.app.dark .experience-card,
+.app.dark .contact-card {
+
+    background-color: rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================
+   DARK MODE TEXT
+========================= */
 
 .app.dark h1,
 .app.dark h2,
 .app.dark h3,
 .app.dark h4,
 .app.dark h5,
-.app.dark h6,
+.app.dark h6 {
+
+    color: white;
+}
+
+
 .app.dark p,
-.app.dark span,
-.app.dark a,
-.app.dark li {
-  color: #ffffff;
+.app.dark span {
+
+    color: #cbd5e1;
 }
 
 
-/* NAVBAR */
+/* =========================
+   CONTACT INPUTS
+========================= */
 
-.app.dark .navbar {
-  background: #111827;
+.contact-form input,
+.contact-form textarea {
+
+    width: 100%;
+
+    padding: 18px 20px;
+
+    border-radius: 15px;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition: 0.3s ease;
 }
 
 
-/* LINKS */
+/* LIGHT MODE INPUT */
 
-.app.dark .nav-links a {
-  color: white;
+.app .contact-form input,
+.app .contact-form textarea {
+
+    background: white;
+
+    color: black;
+
+    border: 1px solid #dbe4ee;
 }
 
 
-/* CARDS / BOXES */
+/* DARK MODE INPUT */
 
-.app.dark .card,
-.app.dark .project-card,
-.app.dark .service-card {
-  background: #1e293b;
-  color: white;
+.app.dark .contact-form input,
+.app.dark .contact-form textarea {
+
+    background-color: rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
-/* LIGHT MODE */
 
-.app{
 
-    --bg-color: #ffffff;
-    --text-color: #111111;
-    --card-color: #f5f5f5;
-    --secondary-text: #475569;
+/* PLACEHOLDER */
 
-    background: var(--bg-color);
-    color: var(--text-color);
+.app.dark input::placeholder,
+.app.dark textarea::placeholder {
+
+    color: #94a3b8;
+}
+
+
+/* =========================
+   HERO BUTTON
+========================= */
+
+.hero-btn {
+
+    padding: 15px 35px;
+
+    border-radius: 50px;
+
+    background: cyan;
+
+    color: black;
+
+    font-size: 16px;
+
+    font-weight: 600;
 
     transition: 0.3s ease;
 
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 
-/* DARK MODE */
+.hero-btn:hover {
 
-.app.dark{
+    transform: translateY(-5px);
 
-    --bg-color: #0f172a;
-    --text-color: #ffffff;
-    --card-color: #1e293b;
-    --secondary-text: #cbd5e1;
+    box-shadow:
+        0 0 30px cyan;
+}
+
+
+/* OUTLINE BUTTON */
+
+.outline-btn {
+
+    background: transparent;
+
+    border: 2px solid cyan;
+
+    color: cyan;
+}
+
+
+/* =========================
+   COMMON CARD HOVER
+========================= */
+
+.service-card,
+.project-card,
+.skill-card,
+.about-card,
+.experience-card,
+.contact-card {
+
+    transition: 0.4s ease;
+}
+
+
+.service-card:hover,
+.project-card:hover,
+.skill-card:hover,
+.about-card:hover,
+.experience-card:hover,
+.contact-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.4);
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: cyan;
+
+    border-radius: 20px;
+}
+
+
+/* =========================
+   TEXT SELECTION
+========================= */
+
+::selection {
+
+    background: cyan;
+
+    color: black;
+}
+
+
+/* =========================
+   TRANSITION
+========================= */
+
+.app,
+section,
+div,
+button,
+a,
+input,
+textarea {
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 992px) {
+
+    section {
+        padding: 100px 8%;
+    }
+
+}
+
+
+@media(max-width: 768px) {
+
+    section {
+        padding: 90px 6%;
+    }
+
+
+    h1 {
+        font-size: 42px !important;
+    }
+
+    h2 {
+        font-size: 34px !important;
+    }
+
+    h3 {
+        font-size: 24px !important;
+    }
+
+
+    .hero-section,
+    .about-section,
+    .contact-container {
+
+        flex-direction: column !important;
+
+        text-align: center;
+    }
+
+
+    .hero-buttons {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .hero-image {
+        margin-top: 40px;
+    }
+
+
+    .image-circle {
+
+        width: 280px !important;
+        height: 280px !important;
+    }
+
+
+    .projects-container,
+    .skills-container,
+    .services-container,
+    .experience-container {
+
+        grid-template-columns: 1fr !important;
+    }
+
+
+    .navbar {
+
+        padding: 20px 6% !important;
+    }
+
+}
+
+
+@media(max-width: 576px) {
+
+    section {
+        padding: 80px 5%;
+    }
+
+
+    h1 {
+        font-size: 34px !important;
+    }
+
+
+    .hero-btn {
+
+        width: 100%;
+    }
+
+
+    .project-buttons {
+
+        flex-direction: column;
+    }
+
+
+    .project-buttons a {
+
+        text-align: center;
+    }
 
 }

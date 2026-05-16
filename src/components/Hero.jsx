@@ -17,9 +17,9 @@ function Hero() {
                 <h3>Hello, I'm</h3>
 
                 <h1>
-                    Most Tanjila
+                    Most Tanjila Ahmmed
                     <br />
-                    Ahmmed Meem
+                    Meem
                 </h1>
 
                 <h2>

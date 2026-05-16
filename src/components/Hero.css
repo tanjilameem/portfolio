@@ -55,7 +55,7 @@
 
 
 .hero-text p {
-
+    max-width: 550px;
     font-size: 18px;
 
     line-height: 1.8;

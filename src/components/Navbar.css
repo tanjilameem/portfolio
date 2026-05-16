@@ -1,4 +1,6 @@
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
 
@@ -12,29 +14,56 @@
 
     position: sticky;
     top: 0;
-    z-index: 999;
 
-    background: rgba(255, 255, 255, 0.08);
+    z-index: 999;
 
     backdrop-filter: blur(10px);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
+    transition: 0.3s ease;
 }
 
 
-/* LOGO */
+/* =========================
+   LIGHT MODE NAVBAR
+========================= */
+
+.app .navbar {
+
+    background: rgba(255, 255, 255, 0.7);
+
+    border-bottom:
+        1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   DARK MODE NAVBAR
+========================= */
+
+.app.dark .navbar {
+
+    background: rgba(15, 23, 42, 0.6);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================
+   LOGO
+========================= */
 
 .logo img {
 
     width: 120px;
 
     cursor: pointer;
-
 }
 
 
-/* NAV LINKS */
+/* =========================
+   NAV LINKS
+========================= */
 
 .nav-links {
 
@@ -44,15 +73,16 @@
     gap: 40px;
 
     list-style: none;
-
 }
 
+
+/* =========================
+   NAV LINK STYLE
+========================= */
 
 .nav-links li a {
 
     text-decoration: none;
-
-    color: rgb(7, 6, 6);
 
     font-size: 17px;
 
@@ -61,11 +91,44 @@
     position: relative;
 
     transition: 0.3s ease;
-
 }
 
 
-/* HOVER EFFECT */
+/* LIGHT MODE TEXT */
+
+.app .nav-links li a {
+
+    color: #0f172a;
+}
+
+
+/* DARK MODE TEXT */
+
+.app.dark .nav-links li a {
+
+    color: white;
+}
+
+
+/* =========================
+   ACTIVE LINK
+========================= */
+
+.active-link {
+
+    color: cyan !important;
+}
+
+
+.active-link::after {
+
+    width: 100% !important;
+}
+
+
+/* =========================
+   HOVER EFFECT
+========================= */
 
 .nav-links li a::after {
 
@@ -82,25 +145,24 @@
     background: cyan;
 
     transition: 0.3s ease;
-
 }
 
 
 .nav-links li a:hover {
 
     color: cyan;
-
 }
 
 
 .nav-links li a:hover::after {
 
     width: 100%;
-
 }
 
 
-/* MENU ICON */
+/* =========================
+   MENU ICON
+========================= */
 
 .menu-icon {
 
@@ -108,21 +170,88 @@
 
     font-size: 28px;
 
-    color: white;
-
     cursor: pointer;
 
+    transition: 0.3s ease;
 }
 
 
-/* MOBILE RESPONSIVE */
+/* LIGHT MODE ICON */
+
+.app .menu-icon {
+
+    color: #0f172a;
+}
+
+
+/* DARK MODE ICON */
+
+.app.dark .menu-icon {
+
+    color: white;
+}
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+.theme-btn {
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+/* LIGHT MODE BUTTON */
+
+.app .theme-btn {
+
+    color: #0f172a;
+
+    background: rgba(0, 0, 0, 0.05);
+}
+
+
+/* DARK MODE BUTTON */
+
+.app.dark .theme-btn {
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+.theme-btn:hover {
+
+    transform: rotate(180deg);
+
+    box-shadow: 0 0 20px cyan;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 
 @media(max-width: 768px) {
 
     .menu-icon {
 
         display: block;
-
     }
 
 
@@ -136,10 +265,6 @@
         width: 260px;
         height: 100vh;
 
-        background: rgba(15, 23, 42, 0.95);
-
-        backdrop-filter: blur(10px);
-
         flex-direction: column;
 
         align-items: center;
@@ -149,202 +274,57 @@
         gap: 35px;
 
         transition: 0.4s ease;
+    }
 
+
+    /* LIGHT MODE MOBILE MENU */
+
+    .app .nav-links {
+
+        background: rgba(255, 255, 255, 0.95);
+    }
+
+
+    /* DARK MODE MOBILE MENU */
+
+    .app.dark .nav-links {
+
+        background: rgba(15, 23, 42, 0.95);
     }
 
 
     .nav-links.active {
 
         right: 0;
+    }
 
+
+    .navbar {
+
+        padding: 20px 6%;
     }
 
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-}
 
-section {
-    padding-top: 120px;
-}
+/* =========================
+   SMALL MOBILE
+========================= */
 
-.theme-btn {
+@media(max-width: 576px) {
 
-    width: 45px;
-    height: 45px;
+    .logo img {
 
-    border: none;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.08);
-
-    color: white;
-
-    font-size: 20px;
-
-    cursor: pointer;
-
-    transition: 0.3s ease;
-
-}
+        width: 100px;
+    }
 
 
-.theme-btn:hover {
+    .theme-btn {
 
-    transform: rotate(180deg);
+        width: 40px;
+        height: 40px;
 
-    box-shadow: 0 0 20px cyan;
+        font-size: 18px;
+    }
 
-}
-
-/* THEME SWITCH */
-
-.theme-switch {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.theme-switch span {
-    color: white;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.switch {
-    width: 65px;
-    height: 34px;
-    background: #e7e7e7;
-    border-radius: 50px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-    padding: 4px;
-}
-
-.switch.dark {
-    background: #d8cfc3;
-}
-
-.toggle {
-    width: 26px;
-    height: 26px;
-    background: #8aa1a1;
-    border-radius: 50%;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    transition: 0.3s;
-}
-
-.switch.dark .toggle {
-    left: 35px;
-    background: #8aa1a1;
-}
-
-/* THEME TOGGLE */
-
-.switch {
-    width: 65px;
-    height: 34px;
-    background: #ececec;
-    border-radius: 50px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.4s ease;
-    padding: 4px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.switch.dark {
-    background: #d8cfc3;
-}
-
-.toggle {
-    width: 24px;
-    height: 24px;
-    background: #8fa3a3;
-    border-radius: 50%;
-    position: absolute;
-    top: 3px;
-    left: 4px;
-    transition: 0.4s ease;
-}
-
-.switch.dark .toggle {
-    left: 35px;
-}
-
-/* THEME OPTIONS */
-
-.theme-options {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-}
-
-.switch {
-    width: 60px;
-    height: 32px;
-    background: #ececec;
-    border-radius: 50px;
-    position: relative;
-    cursor: pointer;
-    padding: 4px;
-    transition: 0.3s ease;
-}
-
-.switch.dark {
-    background: #d8cfc3;
-}
-
-.toggle {
-    width: 22px;
-    height: 22px;
-    background: #8fa3a3;
-    border-radius: 50%;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    transition: 0.3s ease;
-}
-
-.switch.active .toggle {
-    left: 33px;
-}
-
-/* THEME TOGGLE */
-
-.switch {
-    width: 65px;
-    height: 34px;
-    background: #ececec;
-    border-radius: 50px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.4s ease;
-    padding: 4px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.switch.dark {
-    background: #d8cfc3;
-}
-
-.toggle {
-    width: 24px;
-    height: 24px;
-    background: #8fa3a3;
-    border-radius: 50%;
-    position: absolute;
-    top: 3px;
-    left: 4px;
-    transition: 0.4s ease;
-}
-
-.switch.dark .toggle {
-    left: 35px;
 }
